@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const mainRoutes = require('../routes/mainroutes');
+
 module.exports = (app)=>{
     //Setting app
     app.set('port', process.env.PORT || 4000);
 
     require('../database/config');
-
+    console.log(process.env.NODE_ENV)
     //Views
     app.set('views',path.join(__dirname,'../views'));
     app.set('view engine','.hbs');
